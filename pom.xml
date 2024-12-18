@@ -2,6 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <repositories>
+        <repository>
+            <id>aliyun-maven</id>
+            <name>Aliyun Maven Repository</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+    </repositories>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,7 +33,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <db.url>jdbc:h2:~/community</db.url>
+                <db.url>jdbc:h2:E:\Dev\JAVA\community</db.url>
                 <db.user>sa</db.user>
                 <db.password>123</db.password>
             </properties>
@@ -135,9 +147,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
                 <configuration>
-                    <url>${db.url}community</url>
-                    <user>${db.user}</user>
-                    <password>${db.password}</password>
+                    <url>jdbc:h2:E:\Dev\JAVA\community</url>
+                    <user>sa</user>
+                    <password>123</password>
                 </configuration>
                 <dependencies>
                     <dependency>
